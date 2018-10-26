@@ -228,6 +228,19 @@
       top: 411px;
       visibility: hidden;
     }
+    @keyframes blink {
+      from, to {
+      color: transparent;
+      }
+      50% {
+      color: white;
+      }
+    }
+      #dialog1 span {
+      animation: blink 1s step-end infinite;
+      }
+}
+    
   </style>
   <link href="https://fonts.googleapis.com/css?family=Diplomata:400" rel="stylesheet" type="text/css">
   <script data-source="googbase_min.js" data-version="4" data-exports-type="googbase" src="googbase_min.js"></script>
@@ -257,39 +270,34 @@
           clearInterval(timer);
           gwd.num++;
         }
-      }, 5);
+      }, 1);
     }
     gwd.dialog = function(event) {
       if (gwd.num == 1) {
-        document.getElementById("dialog1").innerHTML = "";
         document.getElementById("girl1").style.visibility = "visible";
         document.getElementById("girl2").style.visibility = "hidden";
         document.getElementById("boy").style.visibility = "hidden";
         document.getElementById("name_text").innerHTML = "庫洛艾";
         typeIt("?！我以為是個帥哥呢，怎麼會是一頭白髮的少年，看起來好中二阿！", 1);
       } else if (gwd.num == 2) {
-        document.getElementById("dialog1").innerHTML = "";
         document.getElementById("girl1").style.visibility = "hidden";
         document.getElementById("girl2").style.visibility = "hidden";
         document.getElementById("boy").style.visibility = "visible";
         document.getElementById("name_text").innerHTML = "納哈特";
         typeIt("說..說什麼呢！比起來還是你後面那位姐姐看起來比較適合呢。", 2)
       } else if (gwd.num == 3) {
-        document.getElementById("dialog1").innerHTML = "";
         document.getElementById("girl1").style.visibility = "hidden";
         document.getElementById("girl2").style.visibility = "visible";
         document.getElementById("boy").style.visibility = "hidden";
         document.getElementById("name_text").innerHTML = "莉芙";
         typeIt("我可不是遊擊士喔，但如果你想要我陪你的話，也不是不行哦。", 3)
       } else if (gwd.num == 4) {
-        document.getElementById("dialog1").innerHTML = "";
         document.getElementById("girl1").style.visibility = "visible";
         document.getElementById("girl2").style.visibility = "hidden";
         document.getElementById("boy").style.visibility = "hidden";
         document.getElementById("name_text").innerHTML = "庫洛艾";
         typeIt("欸欸，這位姊姊怎麼跟別人搶夥伴呢！", 4)
       } else if (gwd.num == 5) {
-        document.getElementById("dialog1").innerHTML = "等等，你們別吵了....";
         document.getElementById("girl1").style.visibility = "hidden";
         document.getElementById("girl2").style.visibility = "hidden";
         document.getElementById("boy").style.visibility = "visible";
